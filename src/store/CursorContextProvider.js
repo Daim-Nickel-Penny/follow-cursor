@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const CursorContext = createContext();
 
-const CursorContextProvider = () => {
+const CursorContextProvider = ({ children }) => {
   const [cursor, setCursor] = useState({ active: false });
 
   return (

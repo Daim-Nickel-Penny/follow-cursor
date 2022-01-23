@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import useMousePosition from "../hooks/useMousePosition";
+import { CursorContext } from "../store/CursorContextProvider";
 export const Cursor = () => {
   const { clientX, clientY } = useMousePosition();
+  const [cursor] = useContext(CursorContext);
 
   return (
     <div
@@ -23,7 +25,11 @@ export const Cursor = () => {
           position: "absolute",
           left: clientX,
           top: clientY,
-          transform: "translate(-50%, -50%)",
+          transform: `translate(-50%, -50%) scale(${cursor.active ? 2.5 : 1})`,
+          stroke: cursor.active ? "black" : "white",
+          strokeWidth: 1,
+          fill: cursor.active ? "rgba(255,255,255,.5)" : "black",
+          transition: "transform .2s ease-in-out",
         }}
       >
         <circle cx="25" cy="25" r="8" />
