@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import isTouchDevice from "../hooks/isTouchDevice";
 import useMousePosition from "../hooks/useMousePosition";
 import { CursorContext } from "../store/CursorContextProvider";
+import "./Cursor.css";
 export const Cursor = () => {
   const { clientX, clientY } = useMousePosition();
   const [cursor] = useContext(CursorContext);
@@ -23,6 +25,7 @@ export const Cursor = () => {
         viewBox="0 0 50 50"
         style={{
           position: "absolute",
+
           left: clientX,
           top: clientY,
           transform: `translate(-50%, -50%) scale(${cursor.active ? 2.5 : 1})`,

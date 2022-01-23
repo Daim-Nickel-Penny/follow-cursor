@@ -1,0 +1,29 @@
+.wrapper {
+  top: 50%;
+  padding-top: 16rem;
+  text-align: center;
+  margin-left: -11rem;
+}
+
+.button {
+  position: absolute;
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 3px;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  padding: 12px 20px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button :hover {
+  color: #000;
+  background: rgb(255, 218, 87);
+}

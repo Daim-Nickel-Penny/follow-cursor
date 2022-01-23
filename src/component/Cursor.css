@@ -1,3 +1,6 @@
 * {
   cursor: none !important;
 }
+.show-cursor {
+  cursor: auto !important;
+}

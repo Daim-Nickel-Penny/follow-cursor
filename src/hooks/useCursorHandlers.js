@@ -1,8 +1,8 @@
 import { useContext, useCallback } from "react";
-import { CursorContext } from "../hooks/CursorContextProvider";
+import { CursorContext } from "../store/CursorContextProvider";
 import isTouchDevice from "./isTouchDevice";
 
-const useCursorHandlers = (options = {}) => {
+export const useCursorHandlers = (options = {}) => {
   if (isTouchDevice) {
     return options;
   }
